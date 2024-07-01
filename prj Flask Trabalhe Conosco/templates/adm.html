@@ -1,17 +1,27 @@
 {% extends 'modelo.html' %}
 {% block conteudo %}
 
-<div class="logout">
-    <p>
-        Olá ADM {{ usuario_informado }}
-        <a href="/logout">
-            <button style="color: red;" type="submit">Sair da página</button>
-        </a>
-    </p>
+<div class="area_adm">
+    <div class="logout">
+        <p>
+            Olá ADM {{ usuario_informado }}
+            <a href="/logout">
+                <button class="btn_logout" type="submit">Sair da página</button>
+            </a>
+        </p>
 
-</div>
-    
+    </div>
+
     <h1>Área administrativa</h1>
+    <div class="barra_botoes">
+        <a href="/cadvaga">
+            <button class="btnGeral" type="submit">Cadastrar Vaga</button>
+        </a>
+
+        <a href="/">
+            <button class="btnGeral" type="submit">Voltar Home</button>
+        </a>
+    </div>
     <div id="adm">
         {% if not(vagas) %}
         <h2>Não há vagas cadastradas</h2>
@@ -24,7 +34,7 @@
                 <th>Salário</th>
                 <th>Excluir</th>
             </thead>
-        {% for vaga in vagas %}
+            {% for vaga in vagas %}
             <tr>
                 <td>{{ vaga[1] }}</td>
                 <td>{{ vaga[2] }}</td>
@@ -32,17 +42,11 @@
                 <td>{{ vaga[4] }}</td>
                 <td><a href="/deletar/{{ vaga[0] }}" onclick="return confirm('Tem certeza?')">Excluir</a></td>
             </tr>
-              
-        {% endfor %}
+
+            {% endfor %}
         </table>
         {% endif %}
     </div>
-
-    <a href="/cadvaga">
-        <button class="btnGeral" type="submit">Cadastrar Vaga</button>
-    </a>
-
-    <a href="/">
-        <button class="btnGeral" type="submit">Voltar Home</button>
-    </a>
+    
+</div>
 {% endblock %}

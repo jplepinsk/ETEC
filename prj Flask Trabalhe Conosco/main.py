@@ -8,7 +8,7 @@ import mysql.connector
 conexaoDB = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="root",
+    password="aluno",
     database="trabalheconosco"
 )
 
@@ -129,7 +129,9 @@ def excluir(id):
     cursorDB.close()
     return redirect('/adm')
     
-
+@app.route('/sobre')
+def sobre():
+    return render_template('sobre.html')
 
 
 

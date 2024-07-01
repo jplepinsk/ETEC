@@ -1,5 +1,9 @@
 /*Documentos CSS*/
 
+:root {
+    --cor-primaria: #210b79;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,15 +16,45 @@ a{
 body{
     background-color: rgb(234, 229, 229);
     height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
 }
 header{
     color: rgb(234, 229, 229);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content:space-around;
+    flex-wrap: wrap;/*quebra*/
+    min-height: 80px;
+    background-color: var(--cor-primaria);
+}
+.logo {
+    height:60px;
+    margin: 0 20px;
+}
+.logo img {
+    height: 100%;
+}
+.menu {
+    display: flex;
     justify-content: center;
-    height: 200px;
-    background-color: brown;
+    align-items:center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.menu ul {
+    list-style: none;
+}
+.menu ul li {
+    display: inline-block;
+}
+.menu ul li a{
+    color: white;
+    padding:20px 40px;
+    font-size:18px;
+}
+.menu ul li a:hover {
+    text-decoration: underline;
 }
 main{
     color: black;
@@ -30,16 +64,60 @@ main{
     justify-content: center;
     min-height: 100vh;
 }
+.mkt {
+    background-image: url('images/background.avif');
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.frase {
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.452);
+    margin-top: 200px;
+    color: rgb(233, 226, 226);
+    text-shadow: 3px 3px 1px black;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.area_vagas {
+    min-height: 80vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+
+
+
+
+
 footer{
     color: rgb(234, 229, 229);
     display: flex;
-    padding-top: 16px;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     height: 100px;
-    background-color: brown;
+    background-color: var(--cor-primaria);
 }
+.boxrodape {
+    width: 30%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.boxrodape a img {
+    width:15%;
+}
+
 #vagas{
     display: flex;
     justify-content: space-around;
@@ -47,14 +125,14 @@ footer{
     flex-wrap: wrap;
 }
 .boxvagas{
-    background-color: bisque;
+    background-color: rgb(198, 197, 206);
     color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 270px;
-    height: 200px;
+    height: 150px;
     margin: 10px;
     box-shadow: 5px 5px 5px #a4a4a4a4;
 }
@@ -87,8 +165,8 @@ footer{
     margin-left: 30%;
 }
 .btnGeral {
-    background-color: brown;
-    border: 1px solid rgb(198, 93, 93);
+    background-color: var(--cor-primaria);
+    border: none;
     border-radius: 4px;
     box-sizing: border-box;
     color: white;
@@ -103,9 +181,15 @@ footer{
     margin: 20px auto;
 }
 #adm thead{
-    background-color: brown;
+    background-color: var(--cor-primaria);
     color: white;
 }
+.barra_botoes {
+    width: 100%;
+    text-align: center;
+}
+
+
 #login{
     box-shadow: 0px 0px 100px #a4a4a4a4;
     width: 50%;
@@ -151,3 +235,28 @@ footer{
     text-decoration: underline;
 }
 
+.area_adm {
+    min-height: 70vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.logout {
+    width: 100%;
+    text-align: right;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+.btn_logout{
+    width: 100px;
+    height: 50px;
+    margin: 20px;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.btn_logout:hover{
+    background-color: #26a0b0;
+}
